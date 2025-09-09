@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   count_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/09 23:10:38 by hroxo            ###   ########.fr       */
+/*   Created: 2025/09/09 22:38:01 by hroxo             #+#    #+#             */
+/*   Updated: 2025/09/09 23:07:26 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h> //TODO kill me
-#include <stdarg.h>
-#include "util/header.h"
 
-int ft_printf(const char *format, ...)
+size_t	count_args(const char	*str)
 {
-	size_t	arg_count;
-//	size_t	bytes_printed;
-	va_list	args;
 	size_t	i;
-
+	size_t	j;
+	size_t	counter;
+	char	flags[9] = "cspdiuxX%";
+	
+	counter = 0;
 	i = 0;
-	arg_count = count_args(format);
-	va_start(args, format);
-	while (i < arg_count)
+	while (str[i])
 	{
-		printf("%i\n", va_arg(args, int));
+		j = 0;
+		if (str[i] == '%') 
+		{
+			while (flags[j])
+			{
+				if (str[i + 1] == flags[j])
+				{
+					counter++;
+					break;
+				}
+				j++;
+			}
+		}
 		i++;
 	}
-	return (0);
-}
-
-int main()
-{
-	ft_printf("Ola %i\n", 42);
-	return 0;
+	return (counter);
 }

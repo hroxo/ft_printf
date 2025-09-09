@@ -6,26 +6,33 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/08 23:29:14 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/08 23:49:56 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/09 20:29:50 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Werror -Wextra -Wall
-INCLUDES = libft.a
+
+LIBFT_DIR = ~/Documents/git_rep/42_libft/libft
+LIBFT = $(LIBFT_DIR)/libft.a
+INCLUDES = -Iutil/
 
 SRC = ft_printf.c
 OBJ = $(SRC:.c=.o)
 
-RM = rf -rf
+RM = rm -rf
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ)
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(NAME): $(LIBFT) $(OBJ)
+	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
