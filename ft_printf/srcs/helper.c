@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_args.c                                       :+:      :+:    :+:   */
+/*   helper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 22:38:01 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/10 12:24:47 by hroxo            ###   ########.fr       */
+/*   Created: 2025/09/10 12:14:01 by hroxo             #+#    #+#             */
+/*   Updated: 2025/09/10 12:30:45 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
+#include <stdarg.h>
+#include "header.h"
 
-size_t	count_args(const char *str)
+size_t	print_arg(va_list args, char type)
 {
-	size_t	i;
-	size_t	j;
-	size_t	counter;
-	char	flags[9] = "cspdiuxX%";
-	
-	counter = 0;
-	i = 0;
-	while (str[i])
+	size_t	printed_char;
+
+	if (type == "char")
 	{
-		j = 0;
-		if (str[i] == '%') 
-		{
-			while (flags[j])
-			{
-				if (str[i + 1] == flags[j])
-				{
-					counter++;
-					break;
-				}
-				j++;
-			}
-		}
-		i++;
+		ft_putstr_fd(args);
 	}
-	return (counter);
+	return (0);
 }

@@ -6,10 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/09 23:10:38 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/10 12:30:43 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h> //TODO kill me
 #include <stdarg.h>
@@ -18,23 +19,29 @@
 int ft_printf(const char *format, ...)
 {
 	size_t	arg_count;
-//	size_t	bytes_printed;
+	size_t	bytes_printed;
 	va_list	args;
 	size_t	i;
+	char	*type;
 
-	i = 0;
+	bytes_printed = 0;
 	arg_count = count_args(format);
 	va_start(args, format);
-	while (i < arg_count)
+	while (format[i]) 
 	{
-		printf("%i\n", va_arg(args, int));
+		if (format[i] == '%')
+		{
+				type = istype(format[i + 1]) //TODO char *istype(char c);
+				if (type != NULL)
+				{
+					va_arg(args, type);
+					bytes_printed += print_arg(args, type);//TODO size_tprint_arg(va_list args, type);
+				}
+		}
+		else
+			ft_putchar(format[i]);
 		i++;
 	}
-	return (0);
-}
-
-int main()
-{
-	ft_printf("Ola %i\n", 42);
-	return 0;
+	va_end(args);
+	return (bytes_printed);
 }
