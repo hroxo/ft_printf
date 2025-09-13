@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "util/header.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	size_t	bytes_printed;
 	va_list	args;
@@ -28,7 +27,6 @@ int ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			
 			bytes_printed += print_args(args, format[i + 1]);
 			i++;
 		}
