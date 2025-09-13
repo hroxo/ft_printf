@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/13 23:56:35 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/14 00:17:13 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int ft_printf(const char *format, ...)
 		{
 			
 			bytes_printed += print_args(args, format[i + 1]);
+			i++;
 		}
 		else
 			ft_putchar(format[i]);
