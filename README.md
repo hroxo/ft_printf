@@ -20,22 +20,6 @@ The goal is to create a small library with the `ft_printf` function that replica
 
 > 💡 If you have implemented bonuses (width, precision, flags `# + 0 -` etc.), add a **Bonus** section here describing exactly what is included.
 
-## 📁 Project structure
-
-```
-
-ft\_printf/
-├── Makefile
-├── ft\_printf/
-│   ├── ft\_printf.c
-│   ├── ft\_printf.h
-│   └── ... (other source/helper files)
-└── README.md
-
-````
-
-> The generated library is usually named `libftprintf.a`.
-
 ## 🔧 Compilation
 
 Requirements: `gcc` and `make`.
