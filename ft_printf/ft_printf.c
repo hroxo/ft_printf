@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/10 12:30:43 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/13 13:46:28 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int ft_printf(const char *format, ...)
 	bytes_printed = 0;
 	arg_count = count_args(format);
 	va_start(args, format);
-	while (format[i]) 
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-				type = istype(format[i + 1]) //TODO char *istype(char c);
+				type = istype(format[i + 1]); //TODO char *istype(char c);
 				if (type != NULL)
 				{
 					va_arg(args, type);
