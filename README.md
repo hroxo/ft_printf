@@ -15,7 +15,7 @@ The goal is to create a small library with the `ft_printf` function that replica
   - `%x` — hexadecimal (lowercase)
   - `%X` — hexadecimal (uppercase)
   - `%%` — prints a `%` symbol
-- Output written to `stdout` using `write(2)`.
+- Output written to `stdout` using `write()`.
 - Returns the **total number of characters printed** (just like `printf`).
 
 > 💡 If you have implemented bonuses (width, precision, flags `# + 0 -` etc.), add a **Bonus** section here describing exactly what is included.
