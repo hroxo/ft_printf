@@ -6,13 +6,12 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 00:17:13 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/14 00:25:32 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h> //TODO kill me
 #include <stdarg.h>
 #include "util/header.h"
 

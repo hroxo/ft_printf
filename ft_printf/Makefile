@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/08 23:29:14 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/14 00:09:56 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/14 00:27:51 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ CFLAGS = -Werror -Wextra -Wall
 
 INCLUDES = -Iutil
 SRC =	srcs/helper.c \
-	srcs/count_args.c \
 	srcs/helper2.c \
 	ft_printf.c \
 	srcs/print.c
