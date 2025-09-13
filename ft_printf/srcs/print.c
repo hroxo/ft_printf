@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:15:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/11 13:58:58 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/13 23:54:13 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include "../util/header.h"
 
-size_t	print_arg(va_list arg, char type)
+size_t	print_args(va_list arg, char type)
 {
 	size_t	count;
 
@@ -28,7 +28,7 @@ size_t	print_arg(va_list arg, char type)
 	else if (type == 's')
 		count = ft_putstr(va_arg(arg, char *));
 	else if (type == 'c')
-		count = ft_putchar(va_arg(arg, char));
+		count = ft_putchar(va_arg(arg, int));
 	else if (type == '%')
 		count = ft_putchar('%');
 	else if (type == 'u')

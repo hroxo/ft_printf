@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:37:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/11 13:55:42 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/13 23:52:44 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ size_t	ft_putunsigned_int(unsigned int nb)
 		count += ft_putunsigned_int(nb / 10);
 	c = (nb % 10) + '0';
 	count += ft_putchar(c);
+	return (count);
+}
+
+size_t	ft_putpointer(void *nb)
+{
+	size_t	count;
+
+	count = ft_putstr("0x");
+	count += ft_putnbr_base((int)(long)nb, "0123456789abcdef");
 	return (count);
 }
 
