@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/08 23:29:14 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/14 00:27:51 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/14 11:21:45 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Werror -Wextra -Wall
 
+LIBFT_DIR = /home/hroxo/Documents/git_rep/42_libft/libft
+LIBFT = $(LIBFT_DIR)/libft.a
 INCLUDES = -Iutil
 SRC =	srcs/helper.c \
 	srcs/helper2.c \
@@ -32,7 +34,9 @@ $(LIBFT):
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	cp $(LIBFT) .
+	ar rcs $(NAME) $(OBJ) libft.a
+	$(RM) libft.a
 
 clean:
 	$(RM) $(OBJ)

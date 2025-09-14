@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 12:14:01 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 01:17:52 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/14 11:31:23 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,24 @@ size_t	ft_putstr(char *str)
 	return (i);
 }
 
-size_t	ft_putnbr_base(int nb, char *base)
+size_t	ft_putnbr_base(long nb, char *base)
 {
 	size_t	printed;
-	long	nbl;
 	char	c;
 	int		len;
 
 	printed = 0;
-	nbl = nb;
 	len = ft_strlen(base);
-	if (nbl < 0)
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		nbl *= -1;
+		nb *= -1;
 	}
-	if (nbl > len)
+	if (nb > len)
 	{
-		printed += ft_putnbr_base(nbl / len, base);
+		printed += ft_putnbr_base(nb / len, base);
 	}
-	c = base[nbl % len];
+	c = base[nb % len];
 	printed += ft_putchar(c);
 	return (printed);
 }
