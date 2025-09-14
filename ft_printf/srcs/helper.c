@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 12:14:01 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/11 00:23:42 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/14 01:17:52 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,19 @@ size_t	ft_putchar(char c)
 size_t	ft_putstr(char *str)
 {
 	size_t	i;
+	char	*isnull;
 
+	isnull = "(null)";
 	i = 0;
+	if (!str) 
+	{
+		while (isnull[i]) 
+		{
+			ft_putchar(isnull[i]);
+			i++;
+		}
+		return (6);
+	}
 	while (str[i])
 	{
 		ft_putchar(str[i]);

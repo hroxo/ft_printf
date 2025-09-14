@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 01:11:01 by hroxo            ###   ########.fr       */
+/*   Created: 2025/09/14 00:50:32 by hroxo             #+#    #+#             */
+/*   Updated: 2025/09/14 01:18:27 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
-#include "util/header.h"
 
-int	ft_printf(const char *format, ...)
+
+int	ft_printf(const char *format, ...);
+
+int main()
 {
-	size_t	bytes_printed;
-	va_list	args;
-	size_t	i;
+	int size;
+	char *a = malloc(1);
+	a = NULL;
+	printf("original\n");
+	size = printf("abc%s\n", a);
+	printf("size: %i\n", size);
+	ft_printf("original\n");
+	size = ft_printf("abc%s\n", a);
+	printf("size: %i\n", size);
 
-	i = 0;
-	bytes_printed = 0;
-	va_start(args, format);
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			bytes_printed += print_args(args, format[i + 1]);
-			i++;
-		}
-		else
-			bytes_printed += ft_putchar(format[i]);
-		i++;
-	}
-	va_end(args);
-	return (bytes_printed);
+	printf("++2nd TEsT\n\n");
+	ft_printf("GOal 245 %i", 245);
 }
