@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 12:14:01 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/02 17:31:25 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:54:59 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ size_t	ft_putnbr_base(long nb, char *base)
 		ft_putchar('-');
 		nb *= -1;
 	}
-	if (nb > len)
+	if (nb >= len)
 	{
 		printed += ft_putnbr_base(nb / len, base);
 	}
