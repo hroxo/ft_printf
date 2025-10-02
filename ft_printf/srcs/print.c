@@ -6,10 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:15:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/13 23:54:13 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:40:00 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "../util/header.h"
@@ -20,7 +21,7 @@ size_t	print_args(va_list arg, char type)
 
 	count = 0;
 	if (type == 'd' || type == 'i')
-		count = ft_putnbr_base(va_arg(arg, int), "0123456789");
+		count = ft_putnbr(va_arg(arg, int));
 	else if (type == 'x')
 		count = ft_putnbr_base(va_arg(arg, int), "0123456789abcdef");
 	else if (type == 'X')

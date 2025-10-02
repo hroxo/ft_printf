@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:37:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 11:30:02 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:41:38 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,24 @@ size_t	ft_putpointer(void *nb)
 	count = ft_putstr("0x");
 	count += ft_putnbr_base((long)nb, "0123456789abcdef");
 	return (count);
+}
+
+size_t	ft_putnbr(long nb)
+{
+	long long nbr;
+	size_t	size;
+
+	size = 0;
+	nbr = nb;
+	if (nbr < 0)
+	{
+		size += ft_putchar('-');
+		nbr *= -1;
+	}
+	if (nbr / 10 > 0)
+		size += ft_putnbr(nbr / 10);
+	size += ft_putchar((nbr % 10) + '0');
+	return (size);
 }
 
 /*

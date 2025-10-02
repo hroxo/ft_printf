@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 22:56:45 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 11:19:34 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:40:13 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "/home/hroxo/Documents/git_rep/42_libft/libft/libft.h"
 
 size_t	ft_putpointer(void *nb);
+size_t	ft_putnbr(long nb);
 size_t	print_args(va_list arg, char type);
 size_t	ft_putunsigned_int(unsigned int nb);
 size_t	ft_putchar(char c);
