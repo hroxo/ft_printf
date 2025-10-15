@@ -37,9 +37,9 @@ size_t	ft_putstr(char *str)
 
 	isnull = "(null)";
 	i = 0;
-	if (!str) 
+	if (!str)
 	{
-		while (isnull[i]) 
+		while (isnull[i])
 		{
 			ft_putchar(isnull[i]);
 			i++;

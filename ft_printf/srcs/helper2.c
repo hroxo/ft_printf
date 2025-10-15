@@ -30,7 +30,7 @@ size_t	ft_putunsigned_int(unsigned int nb)
 static size_t	ft_putpointerhelper(unsigned long nb, char *base)
 {
 	size_t	count;
-	
+
 	count = 0;
 	if (nb / 16 > 0)
 		count += ft_putpointerhelper(nb / 16, base);
@@ -51,8 +51,8 @@ size_t	ft_putpointer(void *nb)
 
 size_t	ft_putnbr(long nb)
 {
-	long long nbr;
-	size_t	size;
+	long long	nbr;
+	size_t		size;
 
 	size = 0;
 	nbr = nb;
