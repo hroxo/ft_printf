@@ -6,14 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:15:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/02 17:40:00 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/28 22:00:35 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include "../util/header.h"
+#include "libft.h"
 
 size_t	print_args(va_list arg, char type)
 {

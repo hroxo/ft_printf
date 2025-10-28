@@ -6,13 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 13:37:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/14 19:31:03 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/28 22:01:23 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include "../util/header.h"
+#include "libft.h"
 
 size_t	ft_putunsigned_int(unsigned int nb)
 {

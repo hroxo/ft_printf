@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 21:43:50 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/14 01:11:01 by hroxo            ###   ########.fr       */
+/*   Created: 2025/09/02 00:32:02 by hroxo             #+#    #+#             */
+/*   Updated: 2025/10/09 21:56:53 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "util/header.h"
+#include "libft.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	bytes_printed;
-	va_list	args;
-	size_t	i;
+	int	len;
 
-	i = 0;
-	bytes_printed = 0;
-	va_start(args, format);
-	while (format[i])
+	len = 0;
+	while (lst)
 	{
-		if (format[i] == '%')
-		{
-			bytes_printed += print_args(args, format[i + 1]);
-			i++;
-		}
-		else
-			bytes_printed += ft_putchar(format[i]);
-		i++;
+		len++;
+		lst = lst->next;
 	}
-	va_end(args);
-	return (bytes_printed);
+	return (len);
 }
+
+/*
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+	t_list	*head;
+	t_list	*current;
+
+	for (int i = 1; i < argc; i++) 
+	{
+		current = ft_lstnew(argv[i]);
+		head = current;
+		current = current->next;
+	}
+	printf("%i\n", ft_lstsize(head));
+	return (0);
+}
+*/

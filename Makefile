@@ -5,21 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/08 23:29:14 by hroxo             #+#    #+#              #
-#    Updated: 2025/10/14 19:22:10 by hroxo            ###   ########.fr        #
+#    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
+#    Updated: 2025/10/28 22:00:09 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
 CC = cc
-CFLAGS = -Werror -Wextra -Wall
+CFLAGS = -Wall -Werror -Wextra
 
-INCLUDES = -Iutil
-SRC =	srcs/helper.c \
-	srcs/helper2.c \
-	ft_printf.c \
-	srcs/print.c
-
+SRC= $(shell find . -name "*.c")
 OBJ = $(SRC:.c=.o)
 
 RM = rm -rf
@@ -27,17 +22,17 @@ RM = rm -rf
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-clean:
-	$(RM) $(OBJ)
+clean: 
+	$(RM) $(OBJ) $(OBJB)
 
-fclean:
-	$(RM) $(OBJ) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all clean fclean re
