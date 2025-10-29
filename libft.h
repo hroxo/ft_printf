@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/28 21:57:54 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/29 10:10:48 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ size_t	print_args(va_list arg, char type);
 size_t	ft_putunsigned_int(unsigned int nb);
 size_t	ft_putchar(char c);
 size_t	ft_putstr(char *str);
-size_t	ft_putnbr_base(int nb, char *base);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
@@ -73,5 +72,6 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+size_t  ft_putnbr_base(long nb, char *base);
 
 #endif
