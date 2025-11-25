@@ -6,13 +6,18 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/29 10:10:48 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/11/25 15:24:32 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -73,5 +78,15 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t  ft_putnbr_base(long nb, char *base);
+char    *ft_glcalloc(size_t nmemb, size_t size);
+char    *ft_glstrjoin(char *s1, char *s2);
+size_t  ft_glstrlen(char *str);
+char    *join_n_free(char *str, char *buf);
+size_t  has_nl(char *str);
+void    clean_house(char **strs);
+char    *read_file(char *stash, int fd);
+char    *get_the_line(char *stash);
+char    *update_stash(char *stash);
+char    *get_next_line(int fd);
 
 #endif
